@@ -1,0 +1,6 @@
+org\siit\UI\HomePage.class
+org\siit\utils\SQLUtils.class
+org\siit\UI\App.class
+org\siit\User.class
+org\siit\UI\LoginPage.class
+org\siit\Professor.class

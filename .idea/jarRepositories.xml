@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jbosstechpreview" />
+      <option name="name" value="jbosstechpreview" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/JbossTechpreviewAll/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype" />
+      <option name="name" value="sonatype" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/SonaType/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring" />
+      <option name="name" value="spring" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/Spring/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="core-tp" />
+      <option name="name" value="core-tp" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/abs-core-deliveries-zip" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="thirdparty" />
+      <option name="name" value="thirdparty" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/thirdparty/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss" />
+      <option name="name" value="jboss" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/JbossPublic/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="itmp-releases" />
+      <option name="name" value="itmp-releases" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/itmp-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-central" />
+      <option name="name" value="maven-central" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/maven-central/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="releases" />
+      <option name="name" value="releases" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="toolchain-nexus" />
+      <option name="name" value="toolchain-nexus" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="cisl-ext-itmp" />
+      <option name="name" value="cisl-ext-itmp" />
+      <option name="url" value="https://nexus-itmp-agcs.devops-services.ec1.aws.aztec.cloud.allianz/repository/cisl-ext-itmp/" />
+    </remote-repository>
+  </component>
+</project>

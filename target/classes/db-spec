@@ -1,0 +1,42 @@
+Use Case Diagram
++----------------------------------+
+|          Professor                |
++----------------------------------+
+| -user ID: String                  |
+| -password: String                 |
++----------------------------------+
+| +login(): boolean                 |
+| +addStudent(name: String): void   |
+| +viewStudentNotes(student: String): String |
+| +addNote(student: String, note: String): void |
+| +logout(): void                   |
++----------------------------------+
+
+User Interface:
+Login Page
+Home Page with Student List
+Student Notes Page
+Add Note Page
+
+
+SQL Database:
+
+CREATE TABLE Notes (
+    student_id INTEGER,
+    note TEXT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
+
+CREATE TABLE Students (
+    student_id INTEGER,
+    professor_id INTEGER,
+    name VARCHAR(50),
+    FOREIGN KEY (professor_id) REFERENCES Professors(user_id),
+    PRIMARY KEY (student_id)
+);
+
+CREATE TABLE Professors (
+    userID INTEGER PRIMARY KEY,
+    password VARCHAR(50)
+);
