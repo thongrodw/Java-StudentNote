@@ -22,9 +22,10 @@ Add Note Page
 SQL Database:
 
 CREATE TABLE Notes (
-    student_id INTEGER,
+    professor_id INTEGER,
     note TEXT,
-    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+    student_name VARCHAR(50),
+    FOREIGN KEY (professor_id) REFERENCES Professors(user_id)
 );
 
 
@@ -37,6 +38,7 @@ CREATE TABLE Students (
 );
 
 CREATE TABLE Professors (
-    userID INTEGER PRIMARY KEY,
+    user_id INTEGER PRIMARY KEY,
     password VARCHAR(50)
 );
+
