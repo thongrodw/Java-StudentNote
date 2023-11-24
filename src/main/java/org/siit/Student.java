@@ -36,6 +36,28 @@ public class Student {
         return students;
     }
 
+    public static Student getStudentById(Integer studentId) {
+        try (Connection connection = SQLUtils.connect()) {
+            String query = "SELECT * FROM Students WHERE student_id = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, studentId);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        Student student = new Student();
+                        student.setStudentId(resultSet.getInt("student_id"));
+                        student.setName(resultSet.getString("name"));
+                        return student;
+                    } else {
+                        return null;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public Integer getStudentId() {
         return studentId;
     }
@@ -44,7 +66,7 @@ public class Student {
         this.studentId = studentId;
     }
 
-    public String getFirstname() {
+    public String getName() {
         return name;
     }
 

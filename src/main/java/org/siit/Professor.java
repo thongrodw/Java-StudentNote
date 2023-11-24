@@ -6,8 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-// Professor class
 public class Professor extends User {
 
     public void addStudent(String name, Integer professorID) {
@@ -24,34 +25,40 @@ public class Professor extends User {
         }
     }
 
-    public String viewStudentNotes(String studentName) {
+    public static List<Note> viewStudentNotes(Integer studentId, Integer professorID) {
+        List<Note> noteList = new ArrayList<>();
         try {
             Connection connection = SQLUtils.connect();
-            String query = "SELECT note FROM Notes WHERE student_name = ?";
+            String query = "SELECT * FROM Notes WHERE student_id = ? AND professor_id = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(2, studentName);
+                preparedStatement.setInt(1, studentId);
+                preparedStatement.setInt(2, professorID);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    StringBuilder notes = new StringBuilder();
                     while (resultSet.next()) {
-                        notes.append(resultSet.getString("noteText")).append("\n");
+                        Note note = new Note();
+                        note.setStudentId(resultSet.getInt("student_id"));
+                        note.setProfessorId(resultSet.getInt("professor_id"));
+                        note.setNote(resultSet.getString("note"));
+                        note.setName(resultSet.getString("student_name"));
+                        noteList.add(note);
                     }
-                    return notes.toString();
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return noteList;
     }
 
-    public void addNote(String studentName, String note) {
+    public static void addNote(Integer studentId, Integer professorID, String note, String studentName) {
         try {
             Connection connection = SQLUtils.connect();
-            String query = "INSERT INTO Notes (professor_id, note, student_name) VALUES (?, ?, ?)";
+            String query = "INSERT INTO Notes (student_id, professor_id, note, student_name) VALUES (?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, getUserID().toString());
-                preparedStatement.setString(2, note);
-                preparedStatement.setString(3, studentName);
+                preparedStatement.setInt(1, studentId);
+                preparedStatement.setInt(2, professorID);
+                preparedStatement.setString(3, note);
+                preparedStatement.setString(4, studentName);
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException e) {

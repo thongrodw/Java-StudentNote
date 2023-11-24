@@ -21,13 +21,12 @@ Add Note Page
 
 SQL Database:
 
-CREATE TABLE Notes (
-    professor_id INTEGER,
-    note TEXT,
-    student_name VARCHAR(50),
-    FOREIGN KEY (professor_id) REFERENCES Professors(user_id)
+CREATE TABLE Professors (
+    user_id INTEGER PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50),
+    email VARCHAR(50)
 );
-
 
 CREATE TABLE Students (
     student_id INTEGER,
@@ -37,8 +36,14 @@ CREATE TABLE Students (
     PRIMARY KEY (student_id)
 );
 
-CREATE TABLE Professors (
-    user_id INTEGER PRIMARY KEY,
-    password VARCHAR(50)
+CREATE TABLE Notes (
+    note_id INTEGER PRIMARY KEY,
+    professor_id INTEGER,
+    student_id INTEGER,
+    note TEXT,
+    student_name VARCHAR(50),
+    FOREIGN KEY (professor_id) REFERENCES Professors(user_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
 
+INSERT INTO public.professors(username, password) VALUES ('admin','admin');
